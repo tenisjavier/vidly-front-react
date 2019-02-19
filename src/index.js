@@ -11,7 +11,6 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
-console.log(process.env);
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>

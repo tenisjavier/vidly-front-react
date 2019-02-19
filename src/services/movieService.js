@@ -1,7 +1,6 @@
 import http from "./httpService";
-import { apiUrl } from "../config.json";
 
-const apiEndpoint = apiUrl + "/movies";
+const apiEndpoint = "/movies";
 
 export function serviceGetMovies() {
     const result = http.get(apiEndpoint);
@@ -14,11 +13,6 @@ export function serviceGetMoviesByGenre(genreId) {
 }
 
 export function serviceSaveMovie(movie) {
-    // if (movie._id) {
-    //     const body = { ...movie };
-    //     delete body._id;
-    //     http.put(movieUrl(movie._id), body);
-    // }
     http.post(apiEndpoint, movie);
 }
 

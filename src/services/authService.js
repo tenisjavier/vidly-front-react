@@ -1,7 +1,6 @@
 import http from "./httpService";
-import { apiUrl } from "../config.json";
 
-const apiEndpoint = apiUrl + "/auth";
+const apiEndpoint = "/auth";
 const tokenKey = "token";
 
 http.setJwt(getJwt());
@@ -18,7 +17,7 @@ export function loginWithJwt(jwt) {
 
 export async function serviceGetCurrentUser() {
     try {
-        const result = await http.get(apiUrl + "/users/me");
+        const result = await http.get("/users/me");
         return result;
     } catch (ex) {
         return null;
@@ -31,7 +30,7 @@ export function getJwt() {
 
 export async function serviceCreateUser(user) {
     try {
-        const result = await http.post(apiUrl + "/users", user);
+        const result = await http.post("/users", user);
         return result;
     } catch (ex) {
         return null;
